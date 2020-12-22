@@ -1,0 +1,16 @@
+ 
+.row {
+    display: flex;
+  }
+
+  .left {
+    float: right;
+  }
+  .right {
+    float: left;
+  }
+
+  .mat-form-field + .mat-form-field {
+    top:100px;
+    margin-left: 8px;
+  }

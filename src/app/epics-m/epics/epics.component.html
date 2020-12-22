@@ -1,0 +1,50 @@
+
+<div >
+	<h1>Epics</h1>
+	<a mat-flat-button color="accent"  (click)="onSave()" style="height: 40px;"><mat-icon inline=true >save</mat-icon> Save Epics</a>
+</div>
+
+<div></div>
+<div >
+<mat-accordion>
+	<mat-expansion-panel   *ngFor="let ProjectS of EpicsServiceService.projectss">
+	  <mat-expansion-panel-header>
+		<mat-panel-title>
+			{{ ProjectS.title }} 
+		</mat-panel-title>
+	  </mat-expansion-panel-header>
+	  <a mat-flat-button color="accent" (click)="onAddEpic(ProjectS.id)"><mat-icon inline=true>add</mat-icon> Add Epic</a>
+	  <div *ngFor="let epi of ProjectS.Epices; let i = index" style="width: 100px;">
+		  <div class="right" style="width: 500px;">
+			<mat-form-field>
+			<mat-label>Enter Epices {{i + 1}}</mat-label>
+			<input matInput color="accent"  [(ngModel)]="epi.name">
+			</mat-form-field>
+			<div class="left">
+				<mat-form-field>
+					<mat-label>Priority</mat-label>
+					<mat-select [(ngModel)]="epi.priority">
+						<mat-option value="PN">Pending</mat-option>
+						<mat-option value="PR">Progress</mat-option>
+						<mat-option value="CD">Completed</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn" (click)="onDeleteEpic(i,ProjectS.id)">
+					<mat-icon aria-label="Delete">delete</mat-icon>
+				</button>
+			</div>
+		</div>
+		
+	</div>
+
+	</mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+  
+
+
+
+
+
+

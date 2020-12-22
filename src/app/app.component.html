@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav mode="side" opened>
+      <nav mat-tab-nav-bar mat-align-tabs="center">
+        <img src="/assets/Mainproject.png" alt="" width="150" height="100">
+      </nav>
+      <nav mat-tab-nav-bar mat-align-tabs="center">
+        <a (click)="activeLink = 'Project'" [active]="activeLink == 'Project'" mat-tab-link routerLink="Project" >Project</a> 
+      </nav>
+      <nav mat-tab-nav-bar mat-align-tabs="center">      
+        <a (click)="activeLink = 'Epics'" [active]="activeLink == 'Epics'" mat-tab-link routerLink="Epics">Epics</a>
+      </nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
